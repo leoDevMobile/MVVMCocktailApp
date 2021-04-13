@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/popularCocktailsFragment"
+        android:title="Popular "
+        android:icon="@drawable/ic_popular_cocktails"/>
+
+    <item android:id="@+id/randomCocktailsFragment"
+        android:title="Random "
+        android:icon="@drawable/ic_random_cocktails"/>
+
+    <item android:id="@+id/savedCocktailsFragment"
+        android:title="Saved "
+        android:icon="@drawable/ic_saved_cocktails"/>
+
+    <item android:id="@+id/searchCocktailsFragment"
+        android:title="Search"
+        android:icon="@drawable/ic_search_cocktails"/>
+
+
+</menu>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/cocktails_nav_graph"
+    app:startDestination="@id/popularCocktailsFragment">
+
+    <fragment
+        android:id="@+id/popularCocktailsFragment"
+        android:name="com.androiddevscocktail.cocktail.ui.fragments.PopularCocktailsFragment"
+        android:label="PopularCocktailsFragment" >
+        <action
+            android:id="@+id/action_popularCocktailsFragment_to_cocktailsFragment"
+            app:destination="@id/cocktailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/savedCocktailsFragment"
+        android:name="com.androiddevscocktail.cocktail.ui.fragments.SavedCocktailsFragment"
+        android:label="SavedCocktailsFragment" >
+        <action
+            android:id="@+id/action_savedCocktailsFragment_to_cocktailsFragment"
+            app:destination="@id/cocktailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/searchCocktailsFragment"
+        android:name="com.androiddevscocktail.cocktail.ui.fragments.SearchCocktailsFragment"
+        android:label="SearchCocktailsFragment" >
+        <action
+            android:id="@+id/action_searchCocktailsFragment_to_cocktailsFragment"
+            app:destination="@id/cocktailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/randomCocktailsFragment"
+        android:name="com.androiddevscocktail.cocktail.ui.fragments.RandomCocktailsFragment"
+        android:label="RandomCocktailsFragment" >
+        <action
+            android:id="@+id/action_randomCocktailsFragment_to_cocktailsFragment"
+            app:destination="@id/cocktailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/cocktailsFragment"
+        android:name="com.androiddevscocktail.cocktail.ui.fragments.CocktailsFragment"
+        android:label="CocktailsFragment" />
+</navigation>

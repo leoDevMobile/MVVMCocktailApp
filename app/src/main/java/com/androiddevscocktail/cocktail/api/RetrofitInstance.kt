@@ -1,5 +1,6 @@
 package com.androiddevscocktail.cocktail.api
 
+import android.util.Log
 import com.androiddevscocktail.cocktail.util.Constants.Companion.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

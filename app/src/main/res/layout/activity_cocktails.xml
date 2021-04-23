@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.CocktailsActivity">
+    tools:context=".ui.CocktailsActivity"
+    android:background="#D5D5D5">
 
     <FrameLayout
         android:id="@+id/flFragment"

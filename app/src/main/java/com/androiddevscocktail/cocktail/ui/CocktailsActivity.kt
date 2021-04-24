@@ -7,36 +7,34 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.androiddevscocktail.cocktail.MainViewModelFactory
+import com.androiddevscocktail.cocktail.DrinksViewModelFactory
 import com.androiddevscocktail.cocktail.R
-import com.androiddevscocktail.cocktail.repository.Repository
+import com.androiddevscocktail.cocktail.repository.DrinksRepository
 import com.androiddevscocktail.cocktail.repository.RemoteDataSource.Drink
+import com.androiddevscocktail.cocktail.repository.database.model.DrinkDatabase
 import com.androiddevscocktail.cocktail.util.DrinksViewModel
 
 import kotlinx.android.synthetic.main.activity_cocktails.*
 
 class CocktailsActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: DrinksViewModel
-    private var drink: Drink? = null
+    lateinit var viewModel: DrinksViewModel
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cocktails)
 
-
+        val drinksRepository = DrinksRepository(DrinkDatabase(this))
+        val viewModelFactory = DrinksViewModelFactory(drinksRepository)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(DrinksViewModel::class.java)
         bottomNavigationView.setupWithNavController(cocktailsNavHostFragment.findNavController())
 
 
 
-        val repository = Repository()
-        viewModel = ViewModelProvider(this, MainViewModelFactory(repository)).get(DrinksViewModel::class.java)
-        viewModel.getPopularCocktails("Mojito")
-        viewModel.myResponse.observe(this, Observer { response ->
-            Log.d("response", "${response.idDrink}")
-            Log.d("response", "${response.strDrink}")
 
-        })
+        }
 
     }
-}
+

@@ -1,12 +1,12 @@
 package com.androiddevscocktail.cocktail.repository
 
 import com.androiddevscocktail.cocktail.api.RetrofitInstance
-import com.androiddevscocktail.cocktail.util.Drink
+import com.androiddevscocktail.cocktail.repository.database.model.Drinks
 import retrofit2.Call
 
 class Repository {
 
-    fun getPopularCocktails(drinks: String): Call<List<Drink>> {
+    fun getPopularCocktails(drinks: String):Call<Drinks> {
         return RetrofitInstance.api.getPopularCocktails(drinks)
     }
 

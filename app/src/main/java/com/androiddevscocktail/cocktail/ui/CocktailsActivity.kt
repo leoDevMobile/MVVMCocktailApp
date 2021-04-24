@@ -5,14 +5,13 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.androiddevscocktail.cocktail.MainViewModel
 import com.androiddevscocktail.cocktail.MainViewModelFactory
 import com.androiddevscocktail.cocktail.R
 import com.androiddevscocktail.cocktail.repository.Repository
-import com.androiddevscocktail.cocktail.util.Drink
+import com.androiddevscocktail.cocktail.repository.database.model.Drink
 
 import kotlinx.android.synthetic.main.activity_cocktails.*
 

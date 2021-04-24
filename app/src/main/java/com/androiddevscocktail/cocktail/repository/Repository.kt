@@ -1,7 +1,7 @@
 package com.androiddevscocktail.cocktail.repository
 
 import com.androiddevscocktail.cocktail.api.RetrofitInstance
-import com.androiddevscocktail.cocktail.repository.database.model.Drinks
+import com.androiddevscocktail.cocktail.repository.RemoteDataSource.Drinks
 import retrofit2.Call
 
 class Repository {

@@ -12,6 +12,15 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/ivDrinkImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="center"/>
+
+
         <TextView
             android:id="@+id/TvTitle"
             android:layout_width="wrap_content"

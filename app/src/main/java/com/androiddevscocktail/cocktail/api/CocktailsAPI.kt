@@ -1,7 +1,7 @@
 package com.androiddevscocktail.cocktail.api
 
 
-import com.androiddevscocktail.cocktail.repository.database.model.Drinks
+import com.androiddevscocktail.cocktail.repository.RemoteDataSource.Drinks
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

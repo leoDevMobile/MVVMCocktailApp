@@ -6,7 +6,7 @@ import com.androiddevscocktail.cocktail.repository.database.model.DrinkDatabase
 import retrofit2.Call
 
 class DrinksRepository(
-    val db: DrinkDatabase
+    val database: DrinkDatabase
 ) {
     suspend fun getPopularCocktails(drinks: String) =
         RetrofitInstance.api.getPopularCocktails(drinks)

@@ -7,7 +7,7 @@ import com.androiddevscocktail.cocktail.R
 import com.androiddevscocktail.cocktail.ui.CocktailsActivity
 import com.androiddevscocktail.cocktail.util.DrinksViewModel
 
-class SearchCocktailsFragment : Fragment(R.layout.fragment_search_cocktails)  {
+class SearchCocktailsFragment : Fragment(R.layout.fragment_search_cocktails) {
 
     lateinit var viewModel: DrinksViewModel
 

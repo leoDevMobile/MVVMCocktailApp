@@ -21,7 +21,6 @@ class CocktailsActivity : AppCompatActivity() {
     lateinit var viewModel: DrinksViewModel
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cocktails)
@@ -32,9 +31,7 @@ class CocktailsActivity : AppCompatActivity() {
         bottomNavigationView.setupWithNavController(cocktailsNavHostFragment.findNavController())
 
 
-
-
-        }
-
     }
+
+}
 

@@ -26,26 +26,26 @@ class PopularCocktailsFragment : Fragment(R.layout.fragment_popular_cocktails) {
         viewModel = (activity as CocktailsActivity).viewModel
         setupRecyclerView()
 
-        viewModel.popularCocktails.observe(viewLifecycleOwner, Observer {   response ->
-        when(response) {
-            is Resource.Success -> {
-                hideProgressBar()
-                response.data?.let {    drinksResponse ->
-                    drinksAdapter.differ.submitList(drinksResponse.drinks)
+        viewModel.popularCocktails.observe(viewLifecycleOwner, Observer { response ->
+            when (response) {
+                is Resource.Success -> {
+                    hideProgressBar()
+                    response.data?.let { drinksResponse ->
+                        drinksAdapter.differ.submitList(drinksResponse.drinks)
 
+                    }
+                }
+                is Resource.Error -> {
+                    hideProgressBar()
+                    response.message?.let { message ->
+                        Log.e(TAG, "An error Occured: $message")
+
+                    }
+                }
+                is Resource.Loading -> {
+                    showProgressBar()
                 }
             }
-            is Resource.Error -> {
-                hideProgressBar()
-                response.message?.let { message ->
-                    Log.e(TAG, "An error Occured: $message" )
-
-                }
-            }
-            is Resource.Loading -> {
-                showProgressBar()
-            }
-        }
         })
     }
 

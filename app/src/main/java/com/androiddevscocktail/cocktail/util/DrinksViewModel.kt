@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 import retrofit2.Response
 
 class DrinksViewModel(
-    val drinksRepository: DrinksRepository
+    private val drinksRepository: DrinksRepository
 ) : ViewModel() {
 
     val popularCocktails: MutableLiveData<Resource<Drinks>> = MutableLiveData()
@@ -20,20 +20,20 @@ class DrinksViewModel(
     }
 
 
-    fun getPopularCocktails(drinks: String) = viewModelScope.launch {
+    private fun getPopularCocktails(drinks: String) = viewModelScope.launch {
         popularCocktails.postValue(Resource.Loading())
         val response = drinksRepository.getPopularCocktails(drinks)
         popularCocktails.postValue(handlePopularCocktailsResponse(response))
 
     }
 
-    private fun handlePopularCocktailsResponse(response: Response<Drinks>) : Resource<Drinks> {
-        if(response.isSuccessful) {
-            response.body()?.let {  resultResponse ->
+    private fun handlePopularCocktailsResponse(response: Response<Drinks>): Resource<Drinks> {
+        if (response.isSuccessful) {
+            response.body()?.let { resultResponse ->
                 return Resource.Success(resultResponse)
             }
         }
-        return  Resource.Error(response.message())
+        return Resource.Error(response.message())
     }
 
 }

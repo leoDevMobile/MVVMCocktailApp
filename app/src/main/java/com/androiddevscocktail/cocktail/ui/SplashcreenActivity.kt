@@ -20,7 +20,7 @@ class SplashcreenActivity : AppCompatActivity() {
         iv_cocktail.animate().setDuration(3620).alpha(2f).withEndAction {
             val i = Intent(this, CocktailsActivity::class.java)
             startActivity(i)
-            overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()
         }
 

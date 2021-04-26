@@ -7,7 +7,7 @@ import com.androiddevscocktail.cocktail.R
 import com.androiddevscocktail.cocktail.ui.CocktailsActivity
 import com.androiddevscocktail.cocktail.util.DrinksViewModel
 
-class CocktailsFragment : Fragment(R.layout.fragment_popular_cocktails)  {
+class CocktailsFragment : Fragment(R.layout.fragment_popular_cocktails) {
 
     lateinit var viewModel: DrinksViewModel
 

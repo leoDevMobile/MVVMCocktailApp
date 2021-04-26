@@ -21,7 +21,7 @@ abstract class DrinkDatabase : RoomDatabase() {
         private val LOCK = Any()
 
         operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
-            instance ?: createDatabase(context).also { instance = it}
+            instance ?: createDatabase(context).also { instance = it }
 
 
         }

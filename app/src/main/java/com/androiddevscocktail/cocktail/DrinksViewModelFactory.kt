@@ -6,7 +6,7 @@ import com.androiddevscocktail.cocktail.repository.DrinksRepository
 import com.androiddevscocktail.cocktail.util.DrinksViewModel
 
 class DrinksViewModelFactory(
-    val drinksRepository: DrinksRepository
+    private val drinksRepository: DrinksRepository
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return DrinksViewModel(drinksRepository) as T

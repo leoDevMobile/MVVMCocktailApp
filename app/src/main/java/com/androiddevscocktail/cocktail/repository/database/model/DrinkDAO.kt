@@ -9,11 +9,11 @@ import com.androiddevscocktail.cocktail.repository.RemoteDataSource.Drink
 interface DrinkDAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(drink: Drink) : Long
+    suspend fun upsert(drink: Drink): Long
 
     @Query("SELECT * FROM drinks")
     fun getAllDrinks(): LiveData<List<Drink>>
 
     @Delete
-    suspend fun  deleteDrink(drink: Drink)
+    suspend fun deleteDrink(drink: Drink)
 }

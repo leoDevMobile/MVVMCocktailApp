@@ -16,4 +16,10 @@ interface CocktailsAPI {
         StrDrink: String = "Drinks"
     ): Response<Drinks>
 
+    @GET("randomselection.php")
+    suspend fun getRandomCocktails(
+        @Query("drinks")
+        StrDrink: String = "Drinks"
+    ): Response<Drinks>
+
 }

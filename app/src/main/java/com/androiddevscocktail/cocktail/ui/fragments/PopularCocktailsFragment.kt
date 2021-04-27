@@ -61,7 +61,8 @@ class PopularCocktailsFragment : Fragment(R.layout.fragment_popular_cocktails) {
         drinksAdapter = DrinksAdapter()
         rvList.apply {
             adapter = drinksAdapter
-            layoutManager = LinearLayoutManager(activity)
+
+            layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         }
 
     }

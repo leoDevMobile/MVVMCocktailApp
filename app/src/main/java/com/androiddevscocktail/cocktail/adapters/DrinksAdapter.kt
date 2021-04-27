@@ -1,23 +1,24 @@
 package com.androiddevscocktail.cocktail.adapters
 
+
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.androiddevscocktail.cocktail.R
+import com.androiddevscocktail.cocktail.databinding.ItemDrinkPreviewBinding
 import com.androiddevscocktail.cocktail.repository.RemoteDataSource.Drink
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_drink_preview.view.*
 
+
 class DrinksAdapter : RecyclerView.Adapter<DrinksAdapter.DrinkViewHolder>() {
 
-    inner class DrinkViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
+    inner class DrinkViewHolder(val binding: ItemDrinkPreviewBinding): RecyclerView.ViewHolder(binding.root)
 
     private val differCallback = object : DiffUtil.ItemCallback<Drink>() {
         override fun areItemsTheSame(oldItem: Drink, newItem: Drink): Boolean {
-            return oldItem.idDrink == newItem.idDrink
+            return oldItem === newItem
         }
 
         override fun areContentsTheSame(oldItem: Drink, newItem: Drink): Boolean {
@@ -30,8 +31,8 @@ class DrinksAdapter : RecyclerView.Adapter<DrinksAdapter.DrinkViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DrinkViewHolder {
         return DrinkViewHolder(
-            LayoutInflater.from(parent.context).inflate(
-                R.layout.fragment_popular_cocktails,
+            ItemDrinkPreviewBinding.inflate(
+                LayoutInflater.from(parent.context),
                 parent,
                 false
 

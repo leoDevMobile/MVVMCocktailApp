@@ -18,20 +18,26 @@
             android:id="@+id/ivDrinkImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="center"/>
-
+            android:scaleType="center" />
 
         <TextView
             android:id="@+id/TvTitle"
+            android:background="@drawable/grey_rectangle_background"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="2dp"
+            android:paddingStart="8dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="2dp"
             android:text="Title"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="italic"
+
+            />
 
 
 

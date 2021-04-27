@@ -5,17 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.CocktailsActivity"
-    android:background="#D5D5D5">
+    android:background="@drawable/cocktail_background">
 
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="10dp"
         android:text="Popular Cocktails"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="#6A3727"
+        android:paddingStart="8dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="2dp"
+        android:background="@drawable/trending_background"
         app:layout_constraintBottom_toTopOf="@+id/rvList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.103"
@@ -28,6 +33,7 @@
         android:layout_height="12dp"
         android:text="Conversion: 1 Oz = 2,95Cl≈"
         android:textSize="10sp"
+        android:textColor="#6A3727"
         app:layout_constraintBottom_toTopOf="@+id/rvList"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.38"
@@ -45,14 +51,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintVertical_bias="0.72" />
 
     <ProgressBar
         android:id="@+id/paginationProgressBar"
         style="?attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="228dp"
         android:background="@android:color/transparent"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,7 +130,9 @@
             android:text="@string/welcome_to_tchinxtchin_this_is_a_v1_version_new_fonctionalities_coming_soon_like_the_possibility_to_add_those_own_cocktails"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            app:layout_constraintTop_toBottomOf="@id/textTrending"/>
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textTrending" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

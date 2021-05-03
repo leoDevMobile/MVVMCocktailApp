@@ -55,5 +55,9 @@
     <fragment
         android:id="@+id/cocktailsFragment"
         android:name="com.androiddevscocktail.cocktail.ui.fragments.CocktailsFragment"
-        android:label="CocktailsFragment" />
+        android:label="CocktailsFragment" >
+        <argument
+            android:name="drink"
+            app:argType="com.androiddevscocktail.cocktail.repository.RemoteDataSource.Drink" />
+    </fragment>
 </navigation>

@@ -3,10 +3,14 @@ package com.androiddevscocktail.cocktail.repository.RemoteDataSource
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
+import java.io.Serializable
 
 @Entity(
     tableName = "Drinks"
 )
+
+
 
 data class Drink(
     @PrimaryKey(autoGenerate = true)
@@ -64,4 +68,4 @@ data class Drink(
     val strMeasure9: String
     //val strTags: String,
     //val strVideo: Any
-)
+) : Serializable

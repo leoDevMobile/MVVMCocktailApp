@@ -3,10 +3,12 @@ package com.androiddevscocktail.cocktail.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.androiddevscocktail.cocktail.DrinksViewModelFactory
 import com.androiddevscocktail.cocktail.R
 import com.androiddevscocktail.cocktail.repository.DrinksRepository
@@ -15,6 +17,7 @@ import com.androiddevscocktail.cocktail.repository.database.model.DrinkDatabase
 import com.androiddevscocktail.cocktail.util.DrinksViewModel
 
 import kotlinx.android.synthetic.main.activity_cocktails.*
+import kotlinx.android.synthetic.main.fragment_random_cocktails.*
 
 class CocktailsActivity : AppCompatActivity() {
 
@@ -31,7 +34,10 @@ class CocktailsActivity : AppCompatActivity() {
         bottomNavigationView.setupWithNavController(cocktailsNavHostFragment.findNavController())
 
 
+
     }
 
+
 }
+
 

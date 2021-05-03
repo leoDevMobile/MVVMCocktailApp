@@ -1,6 +1,5 @@
 package com.androiddevscocktail.cocktail.adapters
 
-
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -12,9 +11,9 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_drink_preview.view.*
 
 
-class DrinksAdapter : RecyclerView.Adapter<DrinksAdapter.DrinkViewHolder>() {
+class LatestDrinksAdapter : RecyclerView.Adapter<LatestDrinksAdapter.LatestDrinkViewHolder>() {
 
-    inner class DrinkViewHolder(private val binding: ItemDrinkPreviewBinding): RecyclerView.ViewHolder(binding.root)
+    inner class LatestDrinkViewHolder(private val binding: ItemDrinkPreviewBinding): RecyclerView.ViewHolder(binding.root)
 
 
     private val differCallback = object : DiffUtil.ItemCallback<Drink>() {
@@ -28,10 +27,10 @@ class DrinksAdapter : RecyclerView.Adapter<DrinksAdapter.DrinkViewHolder>() {
 
     }
 
-    val differ = AsyncListDiffer(this, differCallback)
+    val differs = AsyncListDiffer(this, differCallback)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DrinkViewHolder {
-        return DrinkViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LatestDrinkViewHolder {
+        return LatestDrinkViewHolder(
             ItemDrinkPreviewBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
@@ -43,16 +42,16 @@ class DrinksAdapter : RecyclerView.Adapter<DrinksAdapter.DrinkViewHolder>() {
 
 
     override fun getItemCount(): Int {
-        return differ.currentList.size
+        return differs.currentList.size
     }
 
-    override fun onBindViewHolder(holder: DrinkViewHolder, position: Int) {
-        val drink = differ.currentList[position]
+    override fun onBindViewHolder(holder: LatestDrinkViewHolder, position: Int) {
+        val drink = differs.currentList[position]
         holder.itemView.apply {
             Glide.with(this).load(drink.strDrinkThumb).into(ivDrinkImage)
             TvTitle.text = drink.strDrink
             setOnClickListener {
-              onItemClickListener?.let { it(drink) }
+                onItemClickListener?.let { it(drink) }
             }
 
         }

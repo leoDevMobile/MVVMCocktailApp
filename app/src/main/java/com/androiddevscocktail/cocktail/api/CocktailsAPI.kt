@@ -22,4 +22,16 @@ interface CocktailsAPI {
         StrDrink: String = "Drinks"
     ): Response<Drinks>
 
+    @GET("latest.php")
+    suspend fun getLatestCocktails(
+        @Query("drinks")
+        StrDrink: String = "Drinks"
+    ): Response<Drinks>
+
+    @GET("search.php?s=")
+    suspend fun getsearchCocktails(
+        @Query("drinks")
+        StrDrink: String = "Drinks"
+    ): Response<Drinks>
+
 }

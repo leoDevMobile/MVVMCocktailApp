@@ -52,6 +52,7 @@ class SearchDrinksAdapter : RecyclerView.Adapter<SearchDrinksAdapter.SearchDrink
             Glide.with(this).load(drink.strDrinkThumb).into(ivCocktailImage)
             tvTitleSearch.text = drink.strDrink
             tvDescription.text = drink.strCategory
+            tvalcoolic.text = drink.strAlcoholic
             setOnClickListener {
               onItemClickListener?.let { it(drink) }
             }

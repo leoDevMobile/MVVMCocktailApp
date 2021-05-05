@@ -19,6 +19,7 @@ class DrinksViewModel(
     val latestCocktails: MutableLiveData<Resource<Drinks>> = MutableLiveData()
     val searchCocktails: MutableLiveData<Resource<Drinks>> = MutableLiveData()
 
+
     init {
         getPopularCocktails("drinks")
         getRandomCocktails("drinks")

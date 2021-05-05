@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -22,7 +23,6 @@ import kotlinx.android.synthetic.main.fragment_random_cocktails.*
 class RandomCocktailsFragment : Fragment(R.layout.fragment_random_cocktails) {
 
 
-
     lateinit var viewModel: DrinksViewModel
     lateinit var randomDrinksAdapter: RandomDrinksAdapter
     val TAG = "RandomCocktailFragment"
@@ -31,8 +31,14 @@ class RandomCocktailsFragment : Fragment(R.layout.fragment_random_cocktails) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as CocktailsActivity).viewModel
         setupRecyclerView()
+        randomDrinksAdapter.setOnItemClickListener {
 
 
+            findNavController().navigate(
+                R.id.action_randomCocktailsFragment_to_cocktailsFragment
+
+            )
+        }
 
 
         viewModel.randomCocktails.observe(viewLifecycleOwner, Observer { response ->
@@ -59,7 +65,6 @@ class RandomCocktailsFragment : Fragment(R.layout.fragment_random_cocktails) {
     }
 
 
-
     private fun hideProgressBar() {
         progressBarRandom.visibility = View.INVISIBLE
     }
@@ -74,7 +79,7 @@ class RandomCocktailsFragment : Fragment(R.layout.fragment_random_cocktails) {
             adapter = randomDrinksAdapter
 
 
-            val layoutManager =  CenterZoomLayout(requireContext())
+            val layoutManager = CenterZoomLayout(requireContext())
             layoutManager.orientation = LinearLayoutManager.HORIZONTAL
             layoutManager.reverseLayout = true
             layoutManager.stackFromEnd = true

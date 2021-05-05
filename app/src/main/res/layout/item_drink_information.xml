@@ -13,6 +13,7 @@
 
 
     <TextView
+        android:id="@+id/Title_item"
         android:layout_width="224dp"
         android:layout_height="50dp"
         android:gravity="center"

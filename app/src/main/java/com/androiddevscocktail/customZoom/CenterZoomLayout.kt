@@ -39,7 +39,7 @@ class CenterZoomLayout : LinearLayoutManager {
 
                 val child = getChildAt(i)
                 val childMidPoint = (getDecoratedRight(child!!)
-                        +getDecoratedLeft(child)/2f)
+                        +getDecoratedLeft(child)/8f)
 
                 val d = min(d1, abs(midpoint - childMidPoint))
                 val scale = s0 +(s1-s0) * (d - d0)/(d1 - d0)

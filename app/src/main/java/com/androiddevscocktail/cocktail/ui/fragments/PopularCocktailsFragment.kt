@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import com.androiddevscocktail.cocktail.R
@@ -29,6 +30,16 @@ class PopularCocktailsFragment : Fragment(R.layout.fragment_popular_cocktails) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as CocktailsActivity).viewModel
         setupRecyclerView()
+        drinksAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putParcelable("drink", it)
+            }
+
+            findNavController().navigate(
+                R.id.action_popularCocktailsFragment_to_cocktailsFragment,
+                bundle
+            )
+        }
 
 
         viewModel.popularCocktails.observe(viewLifecycleOwner, Observer { response ->
@@ -68,7 +79,7 @@ class PopularCocktailsFragment : Fragment(R.layout.fragment_popular_cocktails) {
         rvList.apply {
             adapter = drinksAdapter
 
-            val layoutManager =  CenterZoomLayout(requireContext())
+            val layoutManager = CenterZoomLayout(requireContext())
             layoutManager.orientation = LinearLayoutManager.HORIZONTAL
             layoutManager.reverseLayout = true
             layoutManager.stackFromEnd = true
@@ -77,7 +88,7 @@ class PopularCocktailsFragment : Fragment(R.layout.fragment_popular_cocktails) {
             val snapHelper = LinearSnapHelper()
             snapHelper.attachToRecyclerView(rvList)
             rvList.isNestedScrollingEnabled = false
-            //layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+
 
 
             viewModel.latestCocktails.observe(viewLifecycleOwner, Observer { response ->
@@ -103,18 +114,18 @@ class PopularCocktailsFragment : Fragment(R.layout.fragment_popular_cocktails) {
             })
         }
 
-            rvLatestList.apply {
-                adapter = latestDrinksAdapter
+        rvLatestList.apply {
+            adapter = latestDrinksAdapter
 
-                val layoutManager =  CenterZoomLayout(requireContext())
-                layoutManager.orientation = LinearLayoutManager.HORIZONTAL
-                layoutManager.reverseLayout = true
-                layoutManager.stackFromEnd = true
-                rvLatestList.layoutManager = layoutManager
+            val layoutManager = CenterZoomLayout(requireContext())
+            layoutManager.orientation = LinearLayoutManager.HORIZONTAL
+            layoutManager.reverseLayout = true
+            layoutManager.stackFromEnd = true
+            rvLatestList.layoutManager = layoutManager
 
-                val snapHelper = LinearSnapHelper()
-                snapHelper.attachToRecyclerView(rvLatestList)
-                rvLatestList.isNestedScrollingEnabled = false
+            val snapHelper = LinearSnapHelper()
+            snapHelper.attachToRecyclerView(rvLatestList)
+            rvLatestList.isNestedScrollingEnabled = false
 
         }
 

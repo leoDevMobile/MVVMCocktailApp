@@ -6,6 +6,7 @@ import android.view.View
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.androiddevscocktail.cocktail.R
 import com.androiddevscocktail.cocktail.adapters.SearchDrinksAdapter
@@ -30,14 +31,23 @@ class SearchCocktailsFragment : Fragment(R.layout.fragment_search_cocktails) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as CocktailsActivity).viewModel
         setupRecyclerView()
+        searchDrinksAdapter.setOnItemClickListener {
 
-        var job : Job? = null
+
+            findNavController().navigate(
+                R.id.action_searchCocktailsFragment_to_cocktailsFragment
+
+            )
+        }
+
+
+        var job: Job? = null
         etSearch.addTextChangedListener { editable ->
             job?.cancel()
             job = MainScope().launch {
                 delay(SEARCH_COCKTAIL_DELAY)
                 editable?.let {
-                    if(editable.toString().isNotEmpty()) {
+                    if (editable.toString().isNotEmpty()) {
                         viewModel.searchCocktails(editable.toString())
                     }
                 }
@@ -67,7 +77,7 @@ class SearchCocktailsFragment : Fragment(R.layout.fragment_search_cocktails) {
                     showProgressBar()
                 }
             }
-    })
+        })
 
 
     }

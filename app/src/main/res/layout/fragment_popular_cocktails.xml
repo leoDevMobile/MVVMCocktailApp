@@ -84,21 +84,21 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.108"
+        app:layout_constraintVertical_bias="0.24"
         app:srcCompat="@drawable/ic_splash_logo" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="355dp"
         android:layout_height="158dp"
-        android:layout_marginEnd="20dp"
+
         android:background="@drawable/trending_background"
         android:paddingStart="20dp"
         android:paddingTop="2dp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.148">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
 
         <TextView
@@ -115,10 +115,10 @@
             android:textSize="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.93"
+            app:layout_constraintHorizontal_bias="0.931"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.135" />
+            app:layout_constraintVertical_bias="0.045" />
 
         <ImageView
             android:id="@+id/imageView3"
@@ -134,16 +134,19 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
             android:ellipsize="end"
             android:maxLines="4"
+            android:paddingBottom="5dp"
             android:text="@string/welcome_to_tchinxtchin_this_is_a_v1_version_new_fonctionalities_coming_soon_like_the_possibility_to_add_those_own_cocktails"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textTrending" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.821" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

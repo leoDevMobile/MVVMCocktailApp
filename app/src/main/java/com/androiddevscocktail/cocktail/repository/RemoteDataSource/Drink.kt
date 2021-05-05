@@ -1,5 +1,6 @@
 package com.androiddevscocktail.cocktail.repository.RemoteDataSource
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
@@ -11,7 +12,7 @@ import java.io.Serializable
 )
 
 
-
+@Parcelize
 data class Drink(
     @PrimaryKey(autoGenerate = true)
     var id: Int? = null,
@@ -68,4 +69,4 @@ data class Drink(
     val strMeasure9: String
     //val strTags: String,
     //val strVideo: Any
-) : Serializable
+) : Parcelable

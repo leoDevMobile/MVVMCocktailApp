@@ -1,23 +1,273 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6E6E6">
+
+
+<ScrollView
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/recyclerView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="50dp">
 
-    <androidx.core.widget.ContentLoadingProgressBar
-        android:id="@+id/Item_progress_bar"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/recyclerView" />
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    app:cardCornerRadius="15dp"
+    android:layout_marginTop="15dp">
+        <ImageView
+            android:id="@+id/image_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+</androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/Title_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TITLE"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:layout_marginTop="530dp"
+            android:paddingBottom="5dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="INGREDIENTS"
+            android:textSize="25sp"
+            android:textStyle="italic"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_marginTop="600dp"
+            android:background="@drawable/trending_background"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp" />
+
+        <TextView
+            android:id="@+id/Ingredient_1"
+            android:text="Ingredients"
+            android:gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="680dp"
+            android:layout_marginStart="15dp"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:id="@+id/Measure_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="680dp"
+            android:text="Measure"
+            android:gravity="right"
+            android:paddingEnd="15dp"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#007944"
+            android:layout_marginStart="200dp"/>
+
+        <TextView
+            android:id="@+id/Ingredient_2"
+            android:text="Ingredients"
+            android:gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="710dp"
+            android:layout_marginStart="15dp"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:id="@+id/Measure_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="710dp"
+            android:text="Measure"
+            android:gravity="right"
+            android:paddingEnd="15dp"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#007944"
+            android:layout_marginStart="200dp"/>
+
+        <TextView
+            android:id="@+id/Ingredient_3"
+            android:text="Ingredients"
+            android:gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="740dp"
+            android:layout_marginStart="15dp"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:id="@+id/Measure_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="740dp"
+            android:text="Measure"
+            android:gravity="right"
+            android:paddingEnd="15dp"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#007944"
+            android:layout_marginStart="200dp"/>
+
+        <TextView
+            android:id="@+id/Ingredient_4"
+            android:text="Ingredients"
+            android:gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="770dp"
+            android:layout_marginStart="15dp"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:id="@+id/Measure_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="770dp"
+            android:text="Measure"
+            android:gravity="right"
+            android:paddingEnd="15dp"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#007944"
+            android:layout_marginStart="200dp"/>
+
+        <TextView
+            android:id="@+id/Ingredient_5"
+            android:text="Ingredients"
+            android:gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="800dp"
+            android:layout_marginStart="15dp"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:id="@+id/Measure_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="800dp"
+            android:text="Measure"
+            android:gravity="right"
+            android:paddingEnd="15dp"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#007944"
+            android:layout_marginStart="200dp"/>
+
+        <TextView
+            android:id="@+id/Ingredient_6"
+            android:text="Ingredients"
+            android:gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="830dp"
+            android:layout_marginStart="15dp"
+            android:textSize="25dp"/>
+
+            <TextView
+
+                android:text="* Conversion: 1 Oz = 2,95Cl≈ "
+                android:gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="880dp"
+                android:layout_marginStart="15dp"
+                android:textSize="10dp"/>
+
+        <TextView
+            android:id="@+id/Measure_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="830dp"
+            android:text="Measure"
+            android:gravity="right"
+            android:paddingEnd="15dp"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#007944"
+            android:layout_marginStart="200dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="INSTRUCTION"
+            android:textSize="25sp"
+            android:textStyle="italic"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_marginTop="900dp"
+            android:background="@drawable/trending_background"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp" />
+
+        <TextView
+            android:id="@+id/instruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="980dp"
+            android:text=""
+            android:textSize="25sp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginBottom="70dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TYPE OF GLASS :"
+            android:textSize="10sp"
+            android:textStyle="italic"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:layout_marginTop="565dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginEnd="5dp" />
+
+        <TextView
+            android:id="@+id/glass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Glass"
+            android:textSize="10sp"
+            android:layout_marginTop="565dp"
+            android:layout_marginStart="220dp"
+            android:gravity="left"
+            android:layout_marginBottom="80dp"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+</ScrollView>
+
+
+
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -26,16 +276,12 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_favorite"
         app:fabSize="normal"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:tint="#FFFFFF"
         app:backgroundTint="@color/colorPrimary"/>
-
-
-
-
 
 
 

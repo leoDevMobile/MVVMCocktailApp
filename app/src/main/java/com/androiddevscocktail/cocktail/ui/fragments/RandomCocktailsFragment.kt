@@ -32,10 +32,13 @@ class RandomCocktailsFragment : Fragment(R.layout.fragment_random_cocktails) {
         viewModel = (activity as CocktailsActivity).viewModel
         setupRecyclerView()
         randomDrinksAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putParcelable("drink", it)
+            }
 
 
             findNavController().navigate(
-                R.id.action_randomCocktailsFragment_to_cocktailsFragment
+                R.id.action_randomCocktailsFragment_to_cocktailsFragment, bundle
 
             )
         }

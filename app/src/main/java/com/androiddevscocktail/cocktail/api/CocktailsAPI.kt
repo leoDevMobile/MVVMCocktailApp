@@ -29,7 +29,7 @@ interface CocktailsAPI {
     ): Response<Drinks>
 
     @GET("search.php?s=")
-    suspend fun getsearchCocktails(
+    suspend fun searchCocktails(
         @Query("drinks")
         StrDrink: String = "Drinks"
     ): Response<Drinks>

@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.androiddevscocktail.cocktail.repository.DrinksRepository
+import com.androiddevscocktail.cocktail.repository.RemoteDataSource.Drink
 import com.androiddevscocktail.cocktail.repository.RemoteDataSource.Drinks
 
 import kotlinx.coroutines.launch
@@ -38,7 +39,7 @@ class DrinksViewModel(
 
      fun searchCocktails(drinks: String) = viewModelScope.launch {
         searchCocktails.postValue(Resource.Loading())
-        val response = drinksRepository.getSearchCocktails(drinks)
+        val response = drinksRepository.searchCocktails(drinks)
         searchCocktails.postValue(handleSearchCocktailsResponse(response))
     }
 
@@ -96,5 +97,15 @@ class DrinksViewModel(
         return Resource.Error(response.message())
 
 
+    }
+
+    fun saveDrink(drink: Drink) = viewModelScope.launch {
+        drinksRepository.upsert(drink)
+    }
+
+    fun getSaveDrink() = drinksRepository.getSaveDrink()
+
+    fun deleteDrink(drink: Drink) = viewModelScope.launch {
+        drinksRepository.deleteDrink(drink)
     }
 }

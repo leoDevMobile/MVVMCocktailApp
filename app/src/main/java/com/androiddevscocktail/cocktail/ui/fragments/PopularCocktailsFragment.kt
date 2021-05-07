@@ -41,6 +41,17 @@ class PopularCocktailsFragment : Fragment(R.layout.fragment_popular_cocktails) {
             )
         }
 
+        latestDrinksAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putParcelable("drink", it)
+            }
+            findNavController().navigate(
+                R.id.action_popularCocktailsFragment_to_cocktailsFragment,
+                bundle
+            )
+        }
+
+
 
         viewModel.popularCocktails.observe(viewLifecycleOwner, Observer { response ->
             when (response) {

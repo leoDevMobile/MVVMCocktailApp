@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.androiddevscocktail.cocktail.R
+import com.androiddevscocktail.cocktail.adapters.DrinksAdapter
 import com.androiddevscocktail.cocktail.adapters.SearchDrinksAdapter
 import com.androiddevscocktail.cocktail.ui.CocktailsActivity
 import com.androiddevscocktail.cocktail.util.Constants.Companion.SEARCH_COCKTAIL_DELAY
@@ -25,21 +26,22 @@ class SearchCocktailsFragment : Fragment(R.layout.fragment_search_cocktails) {
 
     lateinit var viewModel: DrinksViewModel
     lateinit var searchDrinksAdapter: SearchDrinksAdapter
-    val TAG = "SearchCocktailFragment"
+    val TAG = "SearchCocktailsFragment"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as CocktailsActivity).viewModel
         setupRecyclerView()
         searchDrinksAdapter.setOnItemClickListener {
-
+            val bundle = Bundle().apply {
+                putParcelable("drink", it)
+            }
 
             findNavController().navigate(
-                R.id.action_searchCocktailsFragment_to_cocktailsFragment
+                R.id.action_searchCocktailsFragment_to_cocktailsFragment, bundle
 
             )
         }
-
 
         var job: Job? = null
         etSearch.addTextChangedListener { editable ->
@@ -54,6 +56,10 @@ class SearchCocktailsFragment : Fragment(R.layout.fragment_search_cocktails) {
             }
 
         }
+
+
+
+
 
 
 

@@ -1,20 +1,20 @@
 package com.androiddevscocktail.cocktail.adapters
 
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.androiddevscocktail.cocktail.databinding.ItemDrinkPreviewBinding
+import com.androiddevscocktail.cocktail.databinding.ItemSearchDrinkPreviewBinding
 import com.androiddevscocktail.cocktail.repository.RemoteDataSource.Drink
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.item_drink_preview.view.*
-import kotlinx.android.synthetic.main.item_drink_random_preview.view.*
+import kotlinx.android.synthetic.main.item_search_drink_preview.view.*
 
 
-class LatestDrinksAdapter : RecyclerView.Adapter<LatestDrinksAdapter.LatestDrinkViewHolder>() {
+class SaveDrinksAdapter : RecyclerView.Adapter<SaveDrinksAdapter.SearchDrinkViewHolder>() {
 
-    inner class LatestDrinkViewHolder(private val binding: ItemDrinkPreviewBinding): RecyclerView.ViewHolder(binding.root)
+    inner class SearchDrinkViewHolder(private val binding: ItemSearchDrinkPreviewBinding): RecyclerView.ViewHolder(binding.root)
 
 
     private val differCallback = object : DiffUtil.ItemCallback<Drink>() {
@@ -28,11 +28,11 @@ class LatestDrinksAdapter : RecyclerView.Adapter<LatestDrinksAdapter.LatestDrink
 
     }
 
-    val differs = AsyncListDiffer(this, differCallback)
+    val differ = AsyncListDiffer(this, differCallback)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LatestDrinkViewHolder {
-        return LatestDrinkViewHolder(
-            ItemDrinkPreviewBinding.inflate(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchDrinkViewHolder {
+        return SearchDrinkViewHolder(
+            ItemSearchDrinkPreviewBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -43,16 +43,18 @@ class LatestDrinksAdapter : RecyclerView.Adapter<LatestDrinksAdapter.LatestDrink
 
 
     override fun getItemCount(): Int {
-        return differs.currentList.size
+        return differ.currentList.size
     }
 
-    override fun onBindViewHolder(holder: LatestDrinkViewHolder, position: Int) {
-        val drink = differs.currentList[position]
+    override fun onBindViewHolder(holder: SearchDrinkViewHolder, position: Int) {
+        val drink = differ.currentList[position]
         holder.itemView.apply {
-            Glide.with(this).load(drink.strDrinkThumb).into(ivDrinkImage)
-            TvTitle.text = drink.strDrink
+            Glide.with(this).load(drink.strDrinkThumb).into(ivCocktailImage)
+            tvTitleSearch.text = drink.strDrink
+            tvDescription.text = drink.strCategory
+            tvalcoolic.text = drink.strAlcoholic
             setOnClickListener {
-                onItemClickListener?.let { it(drink) }
+              onItemClickListener?.let { it(drink) }
             }
 
         }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.CocktailsActivity"
-    android:background="#FFFFFF">
+    android:background="#E4E4E4">
 
     <FrameLayout
         android:id="@+id/flFragment"
@@ -39,6 +39,8 @@
         android:elevation="2dp"
         app:backgroundTint="@color/cardview_light_background"
         app:menu="@menu/bottom_navigation_menu"
-        android:background="@drawable/bottomnav_bg"/>
+        android:background="@drawable/bottomnav_bg"
+
+      />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

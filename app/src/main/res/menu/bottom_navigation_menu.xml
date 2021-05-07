@@ -4,6 +4,7 @@
 
     <item android:id="@+id/popularCocktailsFragment"
         android:title="Popular "
+
         android:icon="@drawable/ic_popular_cocktails"/>
 
     <item android:id="@+id/randomCocktailsFragment"

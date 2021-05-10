@@ -56,7 +56,7 @@ class RandomCocktailsFragment : Fragment(R.layout.fragment_random_cocktails) {
                 is Resource.Error -> {
                     hideProgressBar()
                     response.message?.let { message ->
-                        Log.e(TAG, "An error Occured: $message")
+                        Toast.makeText(activity, "An error occured: $message", Toast.LENGTH_SHORT).show()
 
                     }
                 }

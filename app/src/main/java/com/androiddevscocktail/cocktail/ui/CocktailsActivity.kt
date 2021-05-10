@@ -29,7 +29,7 @@ class CocktailsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_cocktails)
 
         val drinksRepository = DrinksRepository(DrinkDatabase(this))
-        val viewModelFactory = DrinksViewModelFactory(drinksRepository)
+        val viewModelFactory = DrinksViewModelFactory(application, drinksRepository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(DrinksViewModel::class.java)
         bottomNavigationView.setupWithNavController(cocktailsNavHostFragment.findNavController())
 

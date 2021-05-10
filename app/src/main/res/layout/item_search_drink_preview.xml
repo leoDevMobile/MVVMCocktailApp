@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:text="Title"
             android:textColor="@android:color/black"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginStart="190dp"
             app:layout_constraintBottom_toBottomOf="@+id/cardView2"
